@@ -8,14 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
+    private var playingState: String = "Welcome!"
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text("\(playingState)")
+                .padding()
+            HStack {
+                Button(action: {
+                    print("Currently paused")
+                }, label: {
+                    Image(systemName: "play")
+                })
+                Button(action: {
+                    print("Currently paused")
+                }, label: {
+                    Image(systemName: "pause")
+                })
+            }
         }
-        .padding()
     }
 }
 
