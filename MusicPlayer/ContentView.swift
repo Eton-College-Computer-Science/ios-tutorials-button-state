@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    private var playingState: String = "Welcome!"
+    @State private var playingState: String = "Welcome!"
     
     var body: some View {
         VStack {
@@ -16,12 +16,12 @@ struct ContentView: View {
                 .padding()
             HStack {
                 Button(action: {
-                    print("Currently paused")
+                    playingState = "playing..."
                 }, label: {
                     Image(systemName: "play")
                 })
                 Button(action: {
-                    print("Currently paused")
+                    playingState = "paused..."
                 }, label: {
                     Image(systemName: "pause")
                 })
